@@ -36,6 +36,12 @@ public class ShellActivity extends Activity {
 
     protected static final String HOST = "abhijeetbishayee-drb.github.io";
 
+    /** Hosts whose board paths stay in the app. The GitHub account is being renamed to
+     *  "sectorchakra" (2026-10): the old host then forwards to the new one, and both must
+     *  stay in-app or the forward would throw the user out to the browser on launch. */
+    static final java.util.Set<String> HOSTS = new java.util.HashSet<>(java.util.Arrays.asList(
+            "abhijeetbishayee-drb.github.io", "sectorchakra.github.io"));
+
     /** Path prefixes on HOST that stay inside the app. Every other link - an NSE
      *  quote page from a tile tap, say, or a US tile's Yahoo Finance page - opens
      *  in the user's browser, which is also the only place NSE's site works (it
@@ -202,7 +208,7 @@ public class ShellActivity extends Activity {
     }
 
     static boolean isInApp(Uri uri) {
-        if (!"https".equals(uri.getScheme()) || !HOST.equals(uri.getHost())) return false;
+        if (!"https".equals(uri.getScheme()) || !HOSTS.contains(uri.getHost())) return false;
         String path = uri.getPath() == null ? "" : uri.getPath();
         for (String prefix : IN_APP_PATHS) {
             if (path.startsWith(prefix) || (path + "/").equals(prefix)) return true;
