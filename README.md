@@ -4,7 +4,7 @@ Shared Android code for the two **Sector Chakra** apps (formerly "Nifty Heatmap"
 
 | Repo | Output | Distribution |
 |---|---|---|
-| [`nifty-heatmap`](https://github.com/abhijeetbishayee-drb/nifty-heatmap) | signed **APK** | sideload / direct download |
+| [`nifty-heatmap`](https://github.com/sectorchakra/nifty-heatmap) | signed **APK** | sideload / direct download |
 | `nifty-heatmap-play` (private) | signed **AAB** | Google Play |
 
 Both pull this repo in as a git submodule at `nifty-heatmap-android-shell/` and
@@ -20,7 +20,7 @@ boards. The boards are **not** reimplemented natively: the previous Kivy app did
 that and drifted from the website. A change to the website reaches the apps
 without an app release.
 
-- Links on `abhijeetbishayee-drb.github.io` under the board paths stay in the app;
+- Links on `sectorchakra.github.io` under the board paths stay in the app;
   everything else (e.g. a tile's NSE quote page) opens in the browser.
 - Native retry screen if the page itself can't load; data-poll failures are left
   to the page.

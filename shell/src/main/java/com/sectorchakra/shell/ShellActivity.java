@@ -34,7 +34,7 @@ import android.widget.Toast;
  */
 public class ShellActivity extends Activity {
 
-    protected static final String HOST = "abhijeetbishayee-drb.github.io";
+    protected static final String HOST = "sectorchakra.github.io";
 
     /** Hosts whose board paths stay in the app. The GitHub account is being renamed to
      *  "sectorchakra" (2026-10): the old host then forwards to the new one, and both must
